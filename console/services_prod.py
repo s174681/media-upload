@@ -45,10 +45,16 @@ from video_animation.create_animation import CreateAnimationHandler
 from media.local_storage import LocalMediaStorage
 from media.transformation.image_to_video import ImageToVideoConverter
 from video_animation.tmp_storage import TmpStorage
+import boto3
+from botocore.client import Config
+from media.s3_storage import S3MediaStorage
+
+s3 = boto3.resource('s3', config=Config(signature_version='s3v4'))
+media_storage = S3MediaStorage(s3=s3, bucket_name='kanclerj')
 
 
 handler = CreateAnimationHandler(
     tmp_storage=TmpStorage(get_full_path('../var/tmp')),
-    media_storage=LocalMediaStorage(get_full_path('../var/media')),
+    media_storage=media_storage,
     transformation=ImageToVideoConverter()
 )

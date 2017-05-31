@@ -1,4 +1,1 @@
-alfa
-omega
-gamma
-xi
+alfa omega
