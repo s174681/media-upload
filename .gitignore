@@ -1,2 +1,6 @@
 *.pyc
 var/files
+tests/video_animation/ws/tmp
+tests/video_animation/ws/video_out.mov
+.cache/
+.venv/
