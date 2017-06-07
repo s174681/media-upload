@@ -17,8 +17,8 @@ while True:
             'video': video_name
         })
         request.confirm()
-        delivery = EmailDelivery()
-        delivery.deliver(
+
+        services.delivery.deliver(
             email=request.email,
             animation_ref='https://s3.eu-central-1.amazonaws.com/%s/%s' % (os.getenv('BUCKET_NAME'), video_name)
         )

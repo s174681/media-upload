@@ -33,4 +33,4 @@ handler = CreateAnimationHandler(
 
 from order_delivery.digital_delivery import EmailDelivery
 
-digital_delivery
+delivery = EmailDelivery()
