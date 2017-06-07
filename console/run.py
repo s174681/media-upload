@@ -12,3 +12,4 @@ while True:
             'photos': request.photos,
             'video': generate_animation_name('video_result.mov')
         })
+        request.confirm()
