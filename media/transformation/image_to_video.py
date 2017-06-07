@@ -8,6 +8,7 @@ class ImageToVideoConverter():
           "ffmpeg",
           "-loop", "1", "-i", image_path,
           "-t", "2", "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p",
+          "-loglevel panic",
           output_path
         ]
 
@@ -20,6 +21,7 @@ class ImageToVideoConverter():
           "-loop", "1", "-i", image_to,
           "-filter_complex", "[1:v][0:v]blend=all_expr='A*(if(gte(T,3),1,T/3))+B*(1-(if(gte(T,3),1,T/3)))'",
           "-t", "3", "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p",
+          "-loglevel panic",
           output_path
         ]
 
@@ -38,6 +40,7 @@ class ImageToVideoConverter():
           "-i", tmp_file_list,
           "-f", "mov", "-codec", "copy",
           "-shortest",
+          "-loglevel panic",
           output_path
         ]
 
