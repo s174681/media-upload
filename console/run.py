@@ -18,11 +18,10 @@ while True:
         })
         request.confirm()
 
+        download_link = "https://s3.eu-central-1.amazonaws.com/%s/%s" % (os.getenv('BUCKET_NAME'), video_name)
+
         services.delivery.deliver(
             email=request.email,
-            animation_ref='https://s3.eu-central-1.amazonaws.com/%s/%s' % (os.getenv('BUCKET_NAME'), video_name)
+            animation_ref=download_link
         )
-
-
-
     time.sleep(1)
