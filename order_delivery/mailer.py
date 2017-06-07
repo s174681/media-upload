@@ -17,14 +17,14 @@ def print_html_doc(variables):
 mandrill_api_key = os.getenv('MANDRILL_KEY')
 mandrill_client = mandrill.Mandrill(mandrill_api_key)
 
-def send_mail(to, vars):
+def send_mail(to, variables):
   try:
     message = {
       'auto_html': None,
       'auto_text': None,
       'from_email': 'jakub@jkan.pl',
       'from_name': '',
-      'html': print_html_doc(vars),
+      'html': print_html_doc(variables),
       'text': 'See it in html mode',
       'subject': "Your animation",
       'to': [
