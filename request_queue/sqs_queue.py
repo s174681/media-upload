@@ -17,6 +17,6 @@ class RequestQueue:
         while True:
             for message in self.sqs_queue.receive_messages():
                 data = json.loads(message.body)
-                request = Request(photos=data['photos'], email=data['email'])
+                request = Request(photos=data['photos'], email=data['email'], message=message)
                 yield request
             time.sleep(1)

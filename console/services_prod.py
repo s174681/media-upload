@@ -1,4 +1,4 @@
-from request_queue.sqs_queueu import RequestQueue
+from request_queue.sqs_queue import RequestQueue
 import os
 import boto3
 from video_animation.create_animation import CreateAnimationHandler
@@ -19,7 +19,7 @@ def get_full_path(file_name):
 
 sqs = boto3.resource('sqs', region_name=os.getenv('QUEUE_REGION'))
 orders = sqs.get_queue_by_name(QueueName=os.getenv('QUEUE_NAME'))
-queue = RequestQueue(queue=orders)
+queue = RequestQueue(sqs_queue=orders)
 
 s3 = boto3.resource('s3', config=Config(signature_version='s3v4'))
 media_storage = S3MediaStorage(s3=s3, bucket_name=os.getenv('BUCKET_NAME'))
