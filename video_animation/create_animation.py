@@ -24,7 +24,7 @@ class CreateAnimationHandler:
             'r'
         )
 
-        self.media_storage.store(video_name, video_media)
+        self.media_storage.store(command['video'], video_media)
 
     def create_animation(self, video_name, photos):
         animation = [self.tmp_storage.absolute_path(self.single_name(photos[0]))]
