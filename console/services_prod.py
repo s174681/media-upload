@@ -17,7 +17,7 @@ def get_full_path(file_name):
     return path
 
 
-sqs = boto3.resource('sqs', region_name="eu-central-1")
+sqs = boto3.resource('sqs', region_name=os.getenv('QUEUE_REGION'))
 orders = sqs.get_queue_by_name(QueueName=os.getenv('QUEUE_NAME'))
 queue = RequestQueue(queue=orders)
 
