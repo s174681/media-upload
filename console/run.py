@@ -2,6 +2,7 @@ import time
 import os
 import importlib
 from media.naming import generate_animation_name
+import time
 
 services = importlib.import_module("services_%s" % (os.environ.get('APP_ENV', 'test')))
 
@@ -13,3 +14,4 @@ while True:
             'video': generate_animation_name('video_result.mov')
         })
         request.confirm()
+    time.sleep(1)
