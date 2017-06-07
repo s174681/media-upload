@@ -10,7 +10,7 @@ def print_html_doc(variables):
         loader=FileSystemLoader(THIS_DIR),
         trim_blocks=True
     )
-    return j2_env.get_template('order_email.html.j2').render(
+    return j2_env.get_template('order_email.html').render(
         variables=variables
     )
 

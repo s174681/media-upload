@@ -30,3 +30,7 @@ handler = CreateAnimationHandler(
     media_storage=media_storage,
     transformation=ImageToVideoConverter()
 )
+
+from order_delivery.digital_delivery import EmailDelivery
+
+digital_delivery

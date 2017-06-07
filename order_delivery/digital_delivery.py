@@ -13,5 +13,5 @@ class EmailDelivery(DigitalDelivery):
     def deliver(self, email, animation_ref):
         send_mail(to=email, vars={'download_url': animation_ref})
 
-    def __init__(self, mailer):
+    def __init__(self):
         DigitalDelivery.__init__(self)
