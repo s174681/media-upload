@@ -12,28 +12,8 @@ def get_full_path(file_name):
 requests = [
     {
         'photos': [
-            '1.jpeg',
-            '2.jpeg',
-            '3.jpeg',
-            '5.jpeg',
-        ],
-        'email': 'jakub.kanclerz@gmail.com'
-    },
-    {
-        'photos': [
-            '1.jpeg',
-            '2.jpeg',
-            '3.jpeg',
-            '5.jpeg',
-        ],
-        'email': 'jakub.kanclerz@gmail.com'
-    },
-    {
-        'photos': [
-            '1.jpeg',
-            '2.jpeg',
-            '3.jpeg',
-            '5.jpeg',
+            'medias/00eaa79ad68046e28fd7039f67552828/2.jpeg',
+            'medias/1e000f25c0e94ed3b4b84fcdbe94d388/1.jpeg'
         ],
         'email': 'jakub.kanclerz@gmail.com'
     }

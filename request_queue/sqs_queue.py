@@ -1,7 +1,8 @@
 import json, time
 
 class Request:
-    def __init__(self, photos, message):
+    def __init__(self, photos, message, email):
+        self.email = email
         self.message = message
         self.photos = photos
 
@@ -16,6 +17,6 @@ class RequestQueue:
         while True:
             for message in self.sqs_queue.receive_messages():
                 data = json.loads(message.body)
-                request = Request(photos=data['photos'])
+                request = Request(photos=data['photos'], email=data['email'])
                 yield request
             time.sleep(1)
