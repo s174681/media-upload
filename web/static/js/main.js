@@ -11,6 +11,7 @@ var resetButton = document.getElementsByClassName('order-ctrl--reset')[0];
 resetButton.addEventListener("click", function() {
     orderStorage.reset();
     location.reload();
+    alert("The film sent on the email.");
 }, false);
 
 
