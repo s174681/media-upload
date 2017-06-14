@@ -27,6 +27,7 @@ var OrderService = function(confirmationEndpoint, http) {
             http.post(confirmationEndpoint, request)
                 .then(function (response) {
                     console.log('success');
+                    alert("The film sent on the email.");
                 })
             ;
         }
